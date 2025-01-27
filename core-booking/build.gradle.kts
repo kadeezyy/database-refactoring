@@ -29,6 +29,7 @@ dependencies {
     implementation("io.micrometer:micrometer-core:1.13.5")
     implementation("io.micrometer:micrometer-registry-prometheus:1.13.5")
     implementation("org.springframework.boot:spring-boot-starter-actuator:3.3.4")
+    implementation("org.liquibase:liquibase-core:4.31.0")
 }
 
 tasks.test {
