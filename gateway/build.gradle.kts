@@ -27,6 +27,7 @@ dependencies {
 
     implementation("org.postgresql:postgresql")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    implementation("org.liquibase:liquibase-core:4.31.0")
 }
 
 tasks.test {
