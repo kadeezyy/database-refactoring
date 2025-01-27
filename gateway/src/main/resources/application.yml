@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    authorities:
+      CLIENT:
+        - CLIENT
+      LIBRARY:
+        - LIBRARY
+      MODERATOR:
+        - CLIENT
+        - MODERATOR
+  datasource:
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: ${SPRING_DATASOURCE_URL}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+  clients:
+    core-booking:
+      host: http://core-booking-balancer-1
+      port: 80
+
+    core-catalog:
+      host: http://core-catalog-app-1
+      port: 8081
+
+rsa:
+  public-key: classpath:certs/public.pem
+  private-key: classpath:certs/private.pem
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: DEBUG
+        web: DEBUG
